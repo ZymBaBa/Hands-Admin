@@ -22,7 +22,15 @@ angular.module('app')
               .state('app', {
                   abstract: true,
                   url: '/app',
-                  templateUrl: 'tpl/app.html'
+                  templateUrl: 'tpl/app.html',
+                  resolve: {
+                      deps: ['uiLoad',
+                          function( uiLoad){
+                              return uiLoad.load([
+                                  'js/controllers/form.js',
+                                  'js/controllers/chart.js']);
+                          }]
+                  }
               })
               //用户管理
               .state('app.user', {
@@ -47,17 +55,12 @@ angular.module('app')
               //数据统计-用户统计
               .state('app.chart_user', {
                   url: '/chart_user',
-                  templateUrl: 'tpl/main/chart_user.html'
+                  templateUrl: 'tpl/chart_user.html'
               })
               //数据统计-招聘统计
               .state('app.chart_hands', {
                   url: '/chart_hands',
                   templateUrl: 'tpl/chart_hands.html'
-              })
-              //数据统计-热闹统计
-              .state('app.chart_hots', {
-                  url: '/chart_hots',
-                  templateUrl: 'tpl/chart_hots.html'
               })
               //权限设置-角色管理
               .state('app.role_management', {
@@ -69,24 +72,24 @@ angular.module('app')
                   url: '/area_management',
                   templateUrl: 'tpl/area_management.html'
               })
-              //Form(模态框要用的JS以前一个DIV，然后下面的要用这个的话，就要设置成app.form.XXX)
-              .state('app.form', {
-                  url: '/form',
-                  template: '<div ui-view class="fade-in"></div>',
+              //岗位设置
+              .state('app.post_set', {
+                  url: '/post_set',
+                  templateUrl: 'tpl/post_set.html',
+                  controller: 'SelectCtrl',
                   resolve: {
-                      deps: ['uiLoad',
-                          function( uiLoad){
-                              return uiLoad.load('js/controllers/form.js');
+                      deps: ['$ocLazyLoad',
+                          function( $ocLazyLoad ){
+                              return $ocLazyLoad.load('ui.select').then(
+                                  function(){
+                                      return $ocLazyLoad.load('js/controllers/select.js');
+                                  }
+                              );
                           }]
                   }
               })
-              //岗位设置
-              .state('app.form.post_set', {
-                  url: '/post_set',
-                  templateUrl: 'tpl/post_set.html'
-              })
               //其他设置
-              .state('app.form.other_set', {
+              .state('app.other_set', {
                   url: '/other_set',
                   templateUrl: 'tpl/other_set.html'
               })
