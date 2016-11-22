@@ -108,12 +108,18 @@
       $modalInstance.dismiss('cancel');
     };
   }])
-  ; 
+  ;
+
   app.controller('ModalDemoCtrl', ['$scope', '$modal', '$log', function($scope, $modal, $log) {
     $scope.items = ['item1', 'item2', 'item3'];
-    $scope.open = function (size) {
+    //$scope.urlD这个是自己定义的
+    $scope.urlD=[{
+      urlD1:'firstContent',
+      urlD2:'secondContent'
+    }];
+    $scope.open = function (size,url) {
       var modalInstance = $modal.open({
-        templateUrl: 'myModalContent.html',
+        templateUrl: url,
         controller: 'ModalInstanceCtrl',
         size: size,
         resolve: {

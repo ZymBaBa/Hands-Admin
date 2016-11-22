@@ -1,0 +1,114 @@
+<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">岗位设置</h1>
+</div>
+
+<div class="wrapper-md" ng-controller="ModalDemoCtrl">
+  <div class="row">
+    <!--分类管理-->
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="row wrapper">
+          <div class="col-sm-6">
+            <div class="input-group">
+              <input type="text" class="input-sm form-control" placeholder="搜索分类">
+              <span class="input-group-btn">
+            <button class="btn btn-sm btn-default" type="button">Go!</button>
+          </span>
+            </div>
+          </div>
+          <div class="col-sm-6 text-right">
+              <span>
+                    <script type="text/ng-template" id="firstContent">
+                      <div ng-include="'tpl/modal/modal.form.html'"></div>
+                    </script>
+                    <button class="btn btn-success" ng-click="open('md',urlD[0].urlD1)">添加类别</button>
+              </span>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table m-b-none" ui-jq="footable" data-filter="#filter" data-page-size="10">
+            <thead>
+            <tr>
+              <th>序号</th>
+              <th>类型</th>
+              <th>岗位数量</th>
+              <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>1</td>
+              <td>市场</td>
+              <td>20</td>
+              <td>
+                <button class="btn  btn-sm btn-success btn-addon"><i class="icon icon-grid"></i>编辑</button>
+                <button class="btn  btn-sm btn-warning  btn-addon"><i class="icon icon-grid"></i>删除</button>
+              </td>
+            </tr>
+            </tbody>
+            <tfoot class="hide-if-no-paging">
+            <tr>
+              <td colspan="10" class="text-center">
+                <ul class="pagination"></ul>
+              </td>
+            </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!--岗位管理-->
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="row wrapper">
+          <div class="col-sm-6">
+            <div class="input-group">
+              <input type="text" class="input-sm form-control" placeholder="搜索岗位">
+              <span class="input-group-btn">
+                 <button class="btn btn-sm btn-default" type="button">Go!</button>
+             </span>
+            </div>
+          </div>
+          <div class="col-sm-6 text-right">
+              <span>
+                  <script type="text/ng-template" id="secondContent">
+                      <div ng-include="'tpl/modal/modal.form1.html'"></div>
+                    </script>
+                    <button class="btn btn-success" ng-click="open('md',urlD[0].urlD2)">添加分类</button>
+              </span>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table m-b-none" ui-jq="footable" data-filter="#filter" data-page-size="10">
+            <thead>
+            <tr>
+              <th>序号</th>
+              <th>所属分类</th>
+              <th>岗位名称</th>
+              <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>1</td>
+              <td>市场</td>
+              <td>促销</td>
+              <td>
+                <button class="btn  btn-sm btn-success btn-addon"><i class="icon icon-grid"></i>编辑</button>
+                <button class="btn  btn-sm btn-warning  btn-addon"><i class="fa fa-ban"></i>删除</button>
+              </td>
+            </tr>
+            </tbody>
+            <tfoot class="hide-if-no-paging">
+            <tr>
+              <td colspan="10" class="text-center">
+                <ul class="pagination"></ul>
+              </td>
+            </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+  </div>
+  </div>
+</div>

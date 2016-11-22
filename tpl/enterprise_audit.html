@@ -1,0 +1,53 @@
+<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">企业审核</h1>
+</div>
+
+<div class="wrapper-md">
+  <div class="panel panel-default">
+    <div class="row wrapper">
+      <div class="col-sm-6 col-sm-offset-3">
+        <div class="input-group">
+          <input type="text" class="input-sm form-control" placeholder="可以用电话、公司名称等信息进行搜索">
+          <span class="input-group-btn">
+            <button class="btn btn-sm btn-default" type="button">Go!</button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table m-b-none" ui-jq="footable" data-filter="#filter" data-page-size="10">
+        <thead>
+        <tr>
+          <th>序号</th>
+          <th>公司名称</th>
+          <th>营业执照号</th>
+          <th>联系人</th>
+          <th>联系电话</th>
+          <th>申请时间</th>
+          <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>嘉兴禾码科技服务有限公司</td>
+            <td>1242353456465434</td>
+            <td>周佳缘</td>
+            <td>13967314931</td>
+            <td>2016-08-09 16:30</td>
+            <td>
+              <button class="btn  btn-sm btn-success btn-addon"><i class="icon icon-grid"></i>审核</button>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot class="hide-if-no-paging">
+        <tr>
+          <td colspan="10" class="text-center">
+            <ul class="pagination"></ul>
+          </td>
+        </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
