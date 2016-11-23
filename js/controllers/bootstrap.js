@@ -114,8 +114,9 @@
     $scope.items = ['item1', 'item2', 'item3'];
     //$scope.urlD这个是自己定义的
     $scope.urlD=[{
-      urlD1:'firstContent',
-      urlD2:'secondContent'
+      urlD1:'tpl/modal/modal.form.html',
+      urlD2:'tpl/modal/modal.form1.html',
+      urlD3:'tpl/modal/modal.addname.html'
     }];
     $scope.open = function (size,url) {
       var modalInstance = $modal.open({

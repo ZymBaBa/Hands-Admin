@@ -1,8 +1,7 @@
 <div class="bg-light lter b-b wrapper-md">
   <h1 class="m-n font-thin h3">角色管理</h1>
 </div>
-
-<div class="wrapper-md">
+<div class="wrapper-md" ng-controller="ModalDemoCtrl">
   <div class="panel panel-default">
     <div class="row wrapper">
       <div class="col-sm-4">
@@ -14,7 +13,7 @@
         </div>
       </div>
       <div class="col-sm-8 text-right">
-        <button class="btn  btn-sm btn-success btn-addon"><i class="fa fa-plus-square"></i>添加账号</button>
+        <button class="btn  btn-sm btn-success btn-addon" ng-click="open('md',urlD[0].urlD3)"><i class="fa fa-plus-square"></i>添加账号</button>
       </div>
     </div>
     <div class="table-responsive">

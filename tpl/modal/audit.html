@@ -1,0 +1,19 @@
+<div class="modal-header">
+  产品信息
+</div>
+<div class="modal-body wrapper-lg">
+  <div class="row">
+    <div class="col-sm-12">
+      <form role="form" class="form-horizontal">
+        <div class="form-group">
+          <label class="col-sm-3 text-right text-muted control-label">id</label>
+          <label class="col-sm-9" >{{items}}</label>
+        </div>
+        <div class="checkbox m-t-lg">
+          <button type="submit" class="btn btn-sm btn-success pull-right text-uc m-t-n-xs" ng-click="ok()"><strong>通过</strong></button>
+          <button type="submit" class="btn btn-sm btn-danger  text-uc m-t-n-xs" ng-click="clear()"><strong>不通过</strong></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

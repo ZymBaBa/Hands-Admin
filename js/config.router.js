@@ -40,7 +40,24 @@ angular.module('app')
               //企业管理-企业审核
               .state('app.enterprise_audit', {
                   url: '/enterprise_audit',
-                  templateUrl: 'tpl/enterprise_audit.html'
+                  templateUrl: 'tpl/enterprise_audit.html',
+                  resolve: {
+                      deps: ['uiLoad',
+                          function( uiLoad){
+                              return uiLoad.load('js/app/enterprise.js');
+                          }]
+                  }
+              })
+              //测试
+              .state('app.audit', {
+                  url: '/audit',
+                  templateUrl: 'tpl/audit.html',
+                  resolve: {
+                      deps: ['uiLoad',
+                          function( uiLoad){
+                              return uiLoad.load('js/app/audit.js');
+                          }]
+                  }
               })
               //企业管理-企业列表
               .state('app.enterprise_list', {
