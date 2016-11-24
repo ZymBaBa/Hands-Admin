@@ -11,7 +11,7 @@ app.filter("jsonDate", function($filter) {
     };
     //{{"/Date(items.proData)/" | jsonDate:"yyyy-MM-dd HH:mm:ss"}}
 });
-app.controller('audit', ['$scope', '$modal', '$log','$http','$filter', function($scope, $modal, $log,$http,$filter) {
+app.controller('audit', ['$scope', '$modal', '$log','$http', function($scope, $modal, $log,$http) {
     $http.get("js/app/cart.json").success(function (data) {
         $scope.cart = data.cart;
     });

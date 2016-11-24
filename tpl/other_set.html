@@ -17,7 +17,7 @@
     <div class="wrapper-md">
       <!-- stats -->
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-6">
           <form name="form" class="form-validation">
             <div class="panel panel-default">
               <div class="panel-heading">
@@ -26,16 +26,16 @@
               <div class="panel-body">
                 <div class="form-group">
                   <label>会员服务费</label>
-                  <input type="tel" class="form-control" ng-model="user.vip" required >
+                  <input type="number" class="form-control" ng-model="user.vip" required >
                 </div>
               </div>
               <footer class="panel-footer text-right bg-light lter">
-                <button type="submit" class="btn btn-success" ng-disabled="form.$invalid">保存</button>
+                <button type="submit" class="btn btn-success" >保存</button>
               </footer>
             </div>
           </form>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-6">
           <form name="form" class="form-validation">
             <div class="panel panel-default">
               <div class="panel-heading">

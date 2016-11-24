@@ -41,10 +41,18 @@
         <label class="col-sm-3 control-label">请确认密码</label>
         <div class="col-sm-9 ">
           <input type="password" name="passwordConfirm"  autocomplete="off" ng-model="data.passwordConfirm" class="form-control" placeholder="请确认密码">
-          <!--ng-show中去对比二次输入的密码-->
           <div class="alert alert-danger help-block" ng-show="myForm.password.$dirty && myForm.passwordConfirm.$dirty && data.password !== data.passwordConfirm">
             二次密码输入不一致
           </div>
+        </div>
+      </div>
+      <!--负责区域-->
+      <div class="form-group">
+        <label class="col-sm-3 control-label">负责区域</label>
+        <div class="col-sm-9 ">
+          <select class="input-sm form-control w-sm inline v-middle">
+            <option value="0">浙江省</option>
+          </select>
         </div>
       </div>
       <!--邮箱地址-->
@@ -52,13 +60,12 @@
         <label class="col-sm-3 control-label">请输入邮箱地址</label>
         <div class="col-sm-9 ">
           <input type="email" name="email"  autocomplete="off" ng-model="data.email" class="form-control" placeholder="请输入邮箱地址">
-          <!--ng-show中去对比二次输入的密码-->
           <div class="alert alert-danger help-block" ng-show="myForm.email.$error.email">
             邮箱地址输入有误，请修改
           </div>
         </div>
       </div>
-      <!--网址-->
+      <!--联系地址-->
       <div class="form-group" ng-class="{'has-error':myForm.http.$dirty && myForm.http.$invalid}">
         <label class="col-sm-3 control-label">请输入联系地址</label>
         <div class="col-sm-9 ">
@@ -70,7 +77,6 @@
         <label class="col-sm-3 control-label">请输入年龄</label>
         <div class="col-sm-9 ">
           <input type="number" name="age"  autocomplete="off" min="18"  max="99"   ng-model="data.age" class="form-control" placeholder="请输入年龄">
-          <!--ng-show中去对比二次输入的密码-->
           <div class="alert alert-danger help-block" ng-show="myForm.age.$error.max">
             年龄不能超过99岁
           </div>

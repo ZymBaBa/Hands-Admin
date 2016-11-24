@@ -17,7 +17,8 @@ angular.module('app')
       function ($stateProvider,   $urlRouterProvider) {
         //默认页
           $urlRouterProvider
-              .otherwise('/app/user');
+              .otherwise('/access/signin');
+              // .otherwise('/app/user');
           $stateProvider
               .state('app', {
                   abstract: true,
@@ -109,6 +110,25 @@ angular.module('app')
               .state('app.other_set', {
                   url: '/other_set',
                   templateUrl: 'tpl/other_set.html'
+              })
+              // 登录(总管理员不需要注册和密码找回)
+              .state('lockme', {
+                  url: '/lockme',
+                  templateUrl: 'tpl/page_lockme.html'
+              })
+              .state('access', {
+                  url: '/access',
+                  template: '<div ui-view class="fade-in-right-big smooth"></div>'
+              })
+              .state('access.signin', {
+                  url: '/signin',
+                  templateUrl: 'tpl/page_signin.html',
+                  resolve: {
+                      deps: ['uiLoad',
+                          function( uiLoad ){
+                              return uiLoad.load( ['js/controllers/signin.js'] );
+                          }]
+                  }
               })
       }
     ]
