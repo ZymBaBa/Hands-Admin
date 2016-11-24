@@ -2,13 +2,16 @@
 <div class="wrapper-md" ng-controller="audit">
   <div class="panel panel-default">
     <div class="row wrapper">
-      <div class="col-sm-6 col-sm-offset-3">
+      <div class="col-sm-6">
         <div class="input-group">
-          <input type="text" class="input-sm form-control" placeholder="可以用电话、公司名称等信息进行搜索">
+          <input type="text" class="input-sm form-control" placeholder="可以用电话、公司名称等信息进行搜索" ng-model="search">
           <span class="input-group-btn">
             <button class="btn btn-sm btn-default" type="button">Go!</button>
           </span>
         </div>
+      </div>
+      <div class="col-sm-6 text-right">
+        <button class="btn btn-success" ng-click="add('md')">新增产品</button>
       </div>
     </div>
     <div class="table-responsive">
@@ -25,7 +28,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="item in cart | filter:{judge:true}">
+          <tr ng-repeat="item in cart |filter:search">
             <td ng-bind="$index+1"></td>
             <td ng-bind="item.name"></td>
             <td ng-bind="item.quantity"></td>
@@ -33,7 +36,8 @@
             <td ng-bind="item.proData"></td>
             <td ng-bind="item.overData"></td>
             <td>
-              <button class="btn  btn-sm btn-success btn-addon" ng-click="open('md',item.id)"><i class="icon icon-settings"></i>查看</button>
+              <button class="btn  btn-sm btn-success btn-addon" ng-click="see('md',item.id)"><i class="icon icon-settings"></i>查看</button>
+              <button class="btn  btn-sm btn-success btn-addon" ng-click="ext('md',item.id)"><i class="icon icon-settings"></i>编辑</button>
             </td>
           </tr>
         </tbody>
