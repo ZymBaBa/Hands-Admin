@@ -60,6 +60,17 @@ angular.module('app')
                           }]
                   }
               })
+              .state('app.auditdemo', {
+                  url: '/auditdemo',
+                  templateUrl: 'tpl/auditdemo.html',
+                  params:{"itemID":null},
+                  resolve: {
+                      deps: ['uiLoad',
+                          function( uiLoad){
+                              return uiLoad.load('js/app/auditdemo.js');
+                          }]
+                  }
+              })
               //企业管理-企业列表
               .state('app.enterprise_list', {
                   url: '/enterprise_list',
@@ -86,10 +97,10 @@ angular.module('app')
                   templateUrl: 'tpl/role_management.html'
               })
               //权限设置-区域管理
-              .state('app.area_management', {
-                  url: '/area_management',
-                  templateUrl: 'tpl/area_management.html'
-              })
+              // .state('app.area_management', {
+              //     url: '/area_management',
+              //     templateUrl: 'tpl/area_management.html'
+              // })
               //岗位设置
               .state('app.post_set', {
                   url: '/post_set',
