@@ -49,6 +49,11 @@ angular.module('app')
                           }]
                   }
               })
+              //企业管理-企业详细
+              .state('app.enterprise_detailed', {
+                  url: '/enterprise_detailed',
+                  templateUrl: 'tpl/enterprise_detailed.html'
+              })
               //测试
               .state('app.audit', {
                   url: '/audit',

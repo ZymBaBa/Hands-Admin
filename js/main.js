@@ -13,7 +13,7 @@ angular.module('app')
       // config
       $scope.app = {
         name: 'Hands-Admin',
-        version: 'V 1.0.0',
+        version: '版本号：V 1.0.0',
         // for chart colors
         color: {
           primary: '#7266ba',
